@@ -38,7 +38,6 @@ ListNode* initListNode(vector<int> v1)
         }
         return ori->next;
     }
-    
 ListNode* reverse(ListNode*ptr){
     ListNode*head = ptr;
     ListNode*nhead = new ListNode();
@@ -56,8 +55,6 @@ ListNode* reverse(ListNode*ptr){
 }
 class Solution{
 public:
-
-    
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
         ListNode*longList;
         ListNode*shortList;
@@ -120,7 +117,7 @@ int main()
     ergodic(ll);
 
 
-    
+    system("pause");
     system("pause");
     return 0;
 }
