@@ -55,57 +55,10 @@ ListNode* reverse(ListNode*ptr){
 }
 class Solution{
 public:
-    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        ListNode*longList;
-        ListNode*shortList;
-        if(getLength(l1)>=getLength(l2)){
-            longList = l1;
-            shortList = l2;
-        }
-        else{
-            longList = l2;
-            shortList = l1;
-        }
+    ListNode* abc;
 
-        // ListNode*ll=reverse(longList);
-        // ListNode*sl=reverse(shortList);
-        ListNode*ll=longList;
-        ListNode*sl=shortList;
-        ergodic(ll);
-        ergodic(sl);
-        ListNode*result=new ListNode;
-        ListNode*ori = result;
-        int carry = 0;
-        int sum = 0;
-        while(ll!=nullptr){
-            if(sl==nullptr)
-                sum=ll->val+0+carry;
-            else
-                sum=ll->val+sl->val+carry;
-            // cout<<sum<<' ';
-            ListNode*temp=new ListNode;
-            if(sum>=10){
-                carry = 1;
-                temp->val=sum%10;
-            }
-            else{
-                carry = 0;
-                temp->val=sum;
-            }
-            result->next = temp;
-            result = temp;
-            if(sl!=nullptr)
-                sl=sl->next;
-            ll=ll->next;
-        }
-        if (carry==1){
-            ListNode*temp=new ListNode;
-            temp->val=1;
-            result->next = temp;
-            result = temp;
-        }
-        return reverse(ori->next);
-    }
+
+    
 
 };
 
