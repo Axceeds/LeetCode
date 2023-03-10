@@ -55,7 +55,7 @@ ListNode* reverse(ListNode*ptr){
 }
 class Solution{
 public:
-    
+    ListNode* abc;
 
 
     
