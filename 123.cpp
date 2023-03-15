@@ -35,6 +35,6 @@ int main()
     listNode*head = initList(v1);
     ergodic(head);
     system("pause");
+    
     return 0;
-
 }
