@@ -25,10 +25,22 @@ void ergodic(ListNode*head){
     }
     cout << endl;
 }
+class Solution {
+public:
+    ListNode* swapPairs(ListNode* head) {
+        ListNode *tail = head;
+        while(head){
 
+        }
+
+    }
+};
 int main(){
-    vector<int> v1 = {1,2,3,4};
-    ergodic(initListNode(v1));
-    system("pause");
-    return 0;
+    Solution s;
+    vector<int> v1 = {1,4,5};
+    vector<int> v2 = {1,3,4};
+    ListNode *list1 = initListNode(v1);
+    ListNode *list2 = initListNode(v2);
+    Solution s;
+
 }
