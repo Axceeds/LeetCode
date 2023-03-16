@@ -1,33 +1,45 @@
-#include <iostream>
-#include <vector>
-using namespace std;
-struct ListNode
-{
-    int val;
-    ListNode* next;
-    ListNode() : val(0),next(nullptr) {}
-    ListNode(int x) : val(x), next(nullptr){}
-    ListNode(int x ,ListNode* head): val(x),next(head){}
-};
-ListNode* initList(vector<int> v1){
-    ListNode*head = new ListNode;
-    ListNode*ori = head;
 
-    for(int i=0;i<v1.size();i++){
-        ListNode*temp = new ListNode;
-        temp->val=v1[i];
-        head->next=temp;
-        head=head->next;
+#include <iostream>
+using namespace std;
+
+#include <vector>
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+int getLength(ListNode *ptr){
+        int length = 0;
+        while(ptr!=nullptr){
+            length ++;
+            ptr = ptr->next;
+        }
+        return length;
     }
-    return ori->next;
-}
 void ergodic(ListNode*head){
-    while(head){
-        cout<<head->val<<' ';
+    // head = head->next;
+    while(head!=nullptr){
+        cout<<head->val;cout<<' ';
         head=head->next;
     }
     cout<<endl;
 }
+ListNode* initList(vector<int> v1)
+    {
+        
+        ListNode* head = new ListNode;
+        ListNode* ori = head;
+        for(int i=0;i<v1.size();i++){
+            ListNode* temp = new ListNode;
+            temp->val = v1[i];
+            temp->next = nullptr;
+            head->next = temp;
+            head = head->next;
+        }
+        return ori->next;
+    }
 class Solution {
 public:
 ListNode* mergeTwoLists(ListNode*list1,ListNode*list2){
@@ -43,7 +55,6 @@ ListNode* mergeTwoLists(ListNode*list1,ListNode*list2){
         
         ergodic(a);
         ergodic(b);
-        // return a;
         ListNode*h1=new ListNode();
         ListNode*h2=new ListNode();
         h1->val = a->val;
@@ -83,7 +94,6 @@ int main()
     cout<<"yes"<<endl;
     Solution s;
     ListNode*head =  s.mergeTwoLists(list1,list2);
-    
     system("pause");
     return 0;
 }
