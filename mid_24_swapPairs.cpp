@@ -27,20 +27,31 @@ void ergodic(ListNode*head){
 }
 class Solution {
 public:
-    ListNode* swapPairs(ListNode* head) {
-        ListNode *tail = head;
-        while(head){
-
+    ListNode* swapPairs(ListNode* head0) {
+        ListNode*ori = new ListNode(0,head0);
+        ListNode*head = ori;
+        if(head->next==nullptr)
+            return head->next;
+        while(head->next&&head->next->next){
+            ListNode *ta = head->next;
+            ListNode *tb = head->next->next;
+            ta->next=tb->next;
+            tb->next = ta;
+            head->next = tb;
+            head=head->next->next;
         }
-
+    // ergodic(ori);
+    return ori->next;
     }
 };
 int main(){
     Solution s;
-    vector<int> v1 = {1,4,5};
+    vector<int> v1 = {};
     vector<int> v2 = {1,3,4};
     ListNode *list1 = initListNode(v1);
     ListNode *list2 = initListNode(v2);
-    Solution s;
+    s.swapPairs(list1);
+    system("pause");
+    return 0;
 
 }
