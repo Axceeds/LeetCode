@@ -27,8 +27,9 @@ void ergodic(ListNode*head){
 }
 
 int main(){
-    vector<int> v1 = {1,2,3,4};
-    ergodic(initListNode(v1));
+    int a = 10,b=3;
+    int c = a/b;
+    cout << c;
     system("pause");
     return 0;
 }
