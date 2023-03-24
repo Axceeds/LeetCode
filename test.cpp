@@ -25,10 +25,34 @@ void ergodic(ListNode*head){
     }
     cout << endl;
 }
+int sum(int a,int b=2){
+    cout<<"using1"<<endl;
+    cout<<a+b<<endl;
+    return a+b;
+}
+double sum(double a, double b){
+    cout<<"using2"<<endl;
+    cout<<a+b<<endl;
+    return a+b;
+}
 
+void shift(vector<pair<int, int>>& nums) {
+for (size_t i = 0; i < nums.size(); ++i) {
+auto [num1, num2] = nums[i];
+num1++;
+num2++;
+}
+}
+struct test{
+    int a;
+    char b;
+};
 int main(){
-    vector<int> v1 = {1,2,3,4};
-    ergodic(initListNode(v1));
+    int x;
+    while(1){
+        cin>>x;
+        cout<<x<<endl;
+    }
     system("pause");
     return 0;
 }
